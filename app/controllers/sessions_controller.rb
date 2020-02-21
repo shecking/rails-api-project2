@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-class SessionsController < ProtectedController
-  before_action :set_session, only: %i[show update destroy]
+class SessionsController < OpenReadController
+  before_action :set_session, only: %i[update destroy]
 
   # GET /sessions
   def index
