@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :sessions, except: %i[new edit]
   # RESTful routes
+  resources :sessions, except: %i[new edit]
   resources :examples, except: %i[new edit]
+
+  # Session routes
+  # post '/sessions' => 'sessions#create'
 
   # Custom routes
   post '/sign-up' => 'users#signup'

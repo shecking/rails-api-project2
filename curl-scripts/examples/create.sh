@@ -6,7 +6,7 @@ curl "http://localhost:4741/sessions" \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "sessions": {
+    "session": {
       "date": "'"${DATE}"'",
       "time": "'"${TIME}"'",
       "practice_time": "'"${PRACTIME}"'",
