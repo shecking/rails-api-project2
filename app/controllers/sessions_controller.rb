@@ -1,5 +1,7 @@
-class SessionsController < ApplicationController
-  before_action :set_session, only: [:show, :update, :destroy]
+# frozen_string_literal: true
+
+class SessionsController < ProtectedController
+  before_action :set_session, only: %i[show update destroy]
 
   # GET /sessions
   def index
@@ -39,13 +41,14 @@ class SessionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_session
-      @session = Session.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def session_params
-      params.require(:session).permit(:date, :time, :practice_time, :notes)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_session
+    @session = Session.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def session_params
+    params.require(:session).permit(:date, :time, :practice_time, :notes)
+  end
 end
