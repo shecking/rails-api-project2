@@ -1,14 +1,6 @@
 # frozen_string_literal: true
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-class SessionsController < ApplicationController
-=======
 class SessionsController < ProtectedController
->>>>>>> writing
-=======
-class SessionsController < OpenReadController
->>>>>>> writing
   before_action :set_session, only: %i[show update destroy]
 
   # GET /sessions
