@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class SessionsController < ProtectedController
+class SessionsController < OpenReadController
   before_action :set_session, only: %i[show update destroy]
 
   # GET /sessions
@@ -49,6 +49,10 @@ class SessionsController < ProtectedController
 
   # Only allow a trusted parameter "white list" through.
   def session_params
-    params.require(:session).permit(:date, :time, :practice_time, :notes)
+    params.require(:session).permit(:date,
+                                    :time,
+                                    :practice_time,
+                                    :notes,
+                                    :user_id)
   end
 end
