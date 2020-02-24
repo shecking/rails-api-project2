@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SessionsController < OpenReadController
-  before_action :set_session, only: %i[show update destroy]
+  before_action :set_session, only: %i[update destroy]
 
   # GET /sessions
   def index
@@ -17,7 +17,7 @@ class SessionsController < OpenReadController
 
   # POST /sessions
   def create
-    @session = Session.new(session_params)
+    @session = current_user.sessions.build(session_params)
 
     if @session.save
       render json: @session, status: :created, location: @session
@@ -44,7 +44,7 @@ class SessionsController < OpenReadController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_session
-    @session = Session.find(params[:id])
+    @session = current_user.sessions.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
