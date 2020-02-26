@@ -5,7 +5,7 @@ class SessionsController < OpenReadController
 
   # GET /sessions
   def index
-    @sessions = Session.all
+    @sessions = current_user.sessions
 
     render json: @sessions
   end
