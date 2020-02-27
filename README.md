@@ -6,13 +6,14 @@ This file is for the back end of the application.
 
 ## Important Links
 
-Link to the back-end : LINK
+Link to the back-end: https://rails-api-project2.herokuapp.com/
+(note: used for testing, HTTP 404 error is expected)
 
 Link to the back-end repo: https://github.com/shecking/rails-api-project2
 
 Link to the front-end application: https://shecking.github.io/client-project2/
 
-Link to the application repo: https://github.com/shecking/client-project2
+Link to the front-end repo: https://github.com/shecking/client-project2
 
 ## Planning Story
 
